@@ -4,7 +4,7 @@
   <div class="header-search-block">
     <div class="custom-select-holder">
       <span class="custom-select-arrow"></span>
-      <% cache(cache_key_for_taxons) do %>
+      <% cache [I18n.locale, @taxons] do %>
         <%= select_tag :taxon,
               options_for_select([[Spree.t(:all_departments), '']] +
                                     @taxons.map {|t| [t.name, t.id]},
