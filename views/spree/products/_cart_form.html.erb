@@ -4,7 +4,7 @@
       <div data-hook="product_price" class="">
         <div id="product-price" class="product-price-block">
           <%= Spree.t(:price) %>
-          <span itemprop="price">
+          <span itemprop="price" content="<%= @product.price_in(current_currency).amount.to_d %>">
             <%= display_price(@product) %>
           </span>
           <span itemprop="priceCurrency" content="<%= @product.currency %>"></span>
