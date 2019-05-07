@@ -13,7 +13,12 @@
   <% if order_just_completed?(@order) %>
     <strong><%= Spree.t(:thank_you_for_your_order) %></strong>
   <% end %>
-
+  <% if @order.custom_cat_order_id.present? %>
+    <h3><%= "CustomCat order id: #{@order.custom_cat_order_id}" %></h3>
+  <% else %>
+    <h3>Order is not created on CustomCat.</h3>
+  <% end %>
+    
   <div id="order" class="checkout-order-block" data-hook>
     <%= render partial: 'spree/shared/order_details', locals: { order: @order } %>
 

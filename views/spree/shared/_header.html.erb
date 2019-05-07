@@ -4,9 +4,10 @@
       <div class="row">
         <figure id="logo" class="col-md-4 col-sm-3 header-logo-section" data-hook>
           <div class="row">
-            <div class="col-xs-6">
-              <a href="/" class="header-logo">Spree<b>Theme</b></a>
-            </div>
+            <% if current_store.image.attached? %>
+              <%= link_to image_tag(main_app.url_for(current_store.image.variant(resize: '300x50'))),
+                          main_app.rails_blob_path(current_store.image, disposition: :display), target: '_blank' %>
+          	<% end %>
             <div class="col-xs-6 text-right header-mobile-menu-block">
               <a href="javascript:" class="header-mobile-menu"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
               <div class="header-mobile-nav-dropdown">

@@ -1,5 +1,13 @@
 <fieldset id="password-credentials">
   <div class="login-form-row">
+    <%= f.text_field :first_name, :class => 'global-input', :placeholder => Spree.t(:first_name) %>
+  </div>
+
+  <div class="login-form-row">
+    <%= f.text_field :last_name, :class => 'global-input', :placeholder => Spree.t(:last_name) %>
+  </div>
+  
+  <div class="login-form-row">
     <%= f.email_field :email, :class => 'global-input', :placeholder => Spree.t(:email) %>
   </div>
   <div class="login-form-row">
