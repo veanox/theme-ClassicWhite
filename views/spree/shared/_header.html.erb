@@ -5,7 +5,7 @@
         <figure id="logo" class="col-md-4 col-sm-3 header-logo-section" data-hook>
           <div class="row">
             <% if current_store.image.attached? %>
-              <%= link_to image_tag(main_app.url_for(current_store.image.variant(resize: '300x50'))),
+              <%= link_to image_tag(main_app.url_for(current_store.image.variant(resize: '600x100'))),
                           main_app.rails_blob_path(current_store.image, disposition: :display), target: '_blank' %>
           	<% end %>
             <div class="col-xs-6 text-right header-mobile-menu-block">
